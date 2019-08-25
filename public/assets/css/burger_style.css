@@ -1,0 +1,43 @@
+.main {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.burger-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+}
+
+.devour-burgers {
+  flex: 1 1 0;
+}
+
+.devoured-burgers {
+  flex: 1 1 0;
+}
+
+.add-burger {
+  padding-top: 50px;
+}
+
+.add-burger-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  max-height: 300px;
+}
+
+.create-form {
+  flex: 1 1 0;
+}
+
+.burger-image {
+  flex: 1 1 0;
+}
+
+.burger-image img {
+  display: block;
+  width: 100%;
+}

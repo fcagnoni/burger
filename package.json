@@ -1,0 +1,28 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:dev": "nodemon --watch config --watch controllers --watch models --watch public --watch views server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcagnoni/burger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fcagnoni/burger/issues"
+  },
+  "homepage": "https://github.com/fcagnoni/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1"
+  }
+}

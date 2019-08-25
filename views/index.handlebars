@@ -1,0 +1,64 @@
+
+<h1>Eat Burger</h1>
+
+
+<div class="burger-container">
+    <div class="devour-burgers">
+        <h2>Devour Burger</h2>
+
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li><button onclick="devourBurgerAction({{id}})">{{name}}</button></li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+
+
+    <div class="devoured-burger">
+        <h2>Devoured hamburgers</h2>
+
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            <li>{{name}}</li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+
+<h2>Add a new hamburgers</h2>
+<div class="add-burger-container">
+    
+    <form class="create-form">
+        <div class="form-group">
+            <label for="ca">Name:</label>
+            <input type="text" id="ca" name="name">
+        </div>
+        <button id="submit" type="submit">Add</button>
+    </form>
+    <div class="burger-image">
+        <img src="assets/img/cricket-burger.jpg" />
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#submit").on("click", function (event) {
+        const userData = {
+            name: $("#ca").val()
+        };
+        $.post("/api/burgers", userData, function (data) {
+            location.reload();
+        });
+    });
+    function devourBurgerAction(id) {
+        $.ajax({
+            url: `/api/burgers/${id}`,
+            type: 'PUT',
+            success: function(){location.reload();}
+        });
+    }
+</script>
